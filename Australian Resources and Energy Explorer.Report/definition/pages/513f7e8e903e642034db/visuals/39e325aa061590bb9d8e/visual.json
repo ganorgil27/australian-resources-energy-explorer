@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "39e325aa061590bb9d8e",
+  "position": {
+    "x": 39.302501895375279,
+    "y": 74.238059135708866,
+    "z": 1000,
+    "height": 43.669446550416978,
+    "width": 733.64670204700531,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Explore operating mines by state and commodity",
+                    "textStyle": {
+                      "fontSize": "14pt",
+                      "color": "#5f6b6d"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

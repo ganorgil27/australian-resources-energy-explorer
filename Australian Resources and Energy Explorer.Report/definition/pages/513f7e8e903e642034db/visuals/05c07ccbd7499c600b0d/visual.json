@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "05c07ccbd7499c600b0d",
+  "position": {
+    "x": 1509.5072024260803,
+    "y": 147.02047005307051,
+    "z": 6000,
+    "height": 112.08491281273692,
+    "width": 370,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Top Commodity"
+                }
+              },
+              "queryRef": "FactMine.Top Commodity",
+              "nativeQueryRef": "Top Commodity"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "23D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DED8CE'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f6598c8b0b4a64dabeb0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactMine"
+              }
+            },
+            "Property": "Top Commodity"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

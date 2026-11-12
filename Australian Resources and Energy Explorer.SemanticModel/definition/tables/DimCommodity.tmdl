@@ -1,0 +1,38 @@
+table DimCommodity
+	lineageTag: cb1fbc01-ecaa-4e25-bd3b-aac1afab3807
+
+	column CommodityKey
+		dataType: int64
+		formatString: 0
+		lineageTag: d1e16e6c-858f-4080-82a9-c7e8d530bd9b
+		summarizeBy: none
+		sourceColumn: CommodityKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommodityName
+		dataType: string
+		lineageTag: f61c5045-8f39-4a3a-87a6-804cf1caa7d0
+		summarizeBy: none
+		sourceColumn: CommodityName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCommodity = m
+		mode: import
+		source =
+				let
+				    Source = FactMine,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"CommodityName"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"CommodityName", Order.Ascending}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "Index", 1, 1, Int64.Type),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"Index", "CommodityName"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"Index", "CommodityKey"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,396 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "769f24bb29910c03dd9c",
+  "position": {
+    "x": 39.302501895375279,
+    "y": 738.013646702047,
+    "z": 7000,
+    "height": 237.27065959059894,
+    "width": 1841.3949962092493,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "MineName"
+                }
+              },
+              "queryRef": "FactMine.MineName",
+              "nativeQueryRef": "Mine",
+              "displayName": "Mine"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimRegion"
+                    }
+                  },
+                  "Property": "RegionName"
+                }
+              },
+              "queryRef": "DimRegion.RegionName",
+              "nativeQueryRef": "Region",
+              "displayName": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimCommodity"
+                    }
+                  },
+                  "Property": "CommodityName"
+                }
+              },
+              "queryRef": "DimCommodity.CommodityName",
+              "nativeQueryRef": "Commodity",
+              "displayName": "Commodity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "CommodityGroupSource"
+                }
+              },
+              "queryRef": "FactMine.CommodityGroupSource",
+              "nativeQueryRef": "Source Commodity Group",
+              "displayName": "Source Commodity Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Latitude"
+                }
+              },
+              "queryRef": "Sum(FactMine.Latitude)",
+              "nativeQueryRef": "Latitude"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Longitude"
+                }
+              },
+              "queryRef": "Sum(FactMine.Longitude)",
+              "nativeQueryRef": "Longitude"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FactMine"
+                  }
+                },
+                "Property": "CommodityGroupSource"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "237.89732522276373D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FactMine.Longitude)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "308.71417932449106D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactMine.MineName"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "225.35101848500582D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DimRegion.RegionName"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "179.10546183541734D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DimCommodity.CommodityName"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "228.90111208674276D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactMine.CommodityGroupSource"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "223.89800240208783D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FactMine.Latitude)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F3F0E9'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FactMine.Latitude)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(FactMine.Longitude)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Mine details'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

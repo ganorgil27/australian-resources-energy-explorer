@@ -1,0 +1,151 @@
+table FactMine
+	lineageTag: 17a36ff4-4d95-45f0-acb5-ee16dca9ad58
+
+	measure 'Operating Mines' =
+			
+			DISTINCTCOUNT ( FactMine[MineKey] )
+		formatString: 0
+		lineageTag: 3bb5145c-2f9b-48a5-8c9b-e7c95ca1c4cd
+
+	measure 'Regions Selected' =
+			
+			COUNTROWS ( VALUES ( DimRegion[StateCode] ) )
+		formatString: 0
+		lineageTag: a6ac7b78-6747-48ee-8ab9-8f4e486f6177
+
+	measure 'Commodities Selected' =
+			
+			COUNTROWS ( VALUES ( DimCommodity[CommodityName] ) )
+		formatString: 0
+		lineageTag: 8342c367-4ad6-47d2-a8ad-06a5293ab984
+
+	measure 'Top Commodity' =
+			
+			VAR CommodityCounts =
+			    ADDCOLUMNS (
+			        VALUES ( DimCommodity[CommodityName] ),
+			        "@MineCount", [Operating Mines]
+			    )
+			VAR TopRow =
+			    TOPN (
+			        1,
+			        CommodityCounts,
+			        [@MineCount], DESC,
+			        DimCommodity[CommodityName], ASC
+			    )
+			RETURN
+			    CONCATENATEX (
+			        TopRow,
+			        DimCommodity[CommodityName],
+			        ", "
+			    )
+		lineageTag: 143ba6b6-1c4f-48d2-9ebb-33e0150fcb82
+
+	measure 'Map Mine Count' =
+			
+			COALESCE(
+			    [Operating Mines],
+			    0
+			)
+		formatString: 0
+		lineageTag: b0cad1b1-7996-4c0f-86cf-5922f52bb49d
+
+	column MineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: eee7076a-fab7-4352-98a6-11edb6912753
+		summarizeBy: count
+		sourceColumn: MineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MineName
+		dataType: string
+		lineageTag: d521b807-625f-46d6-bb58-fad7eb41d53f
+		summarizeBy: none
+		sourceColumn: MineName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateCode
+		dataType: string
+		lineageTag: f36d67d2-4485-4c9b-bdb1-78fb4e657349
+		summarizeBy: none
+		sourceColumn: StateCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionName
+		dataType: string
+		lineageTag: 9f2b24f7-d988-4426-90cd-177b2eef430e
+		summarizeBy: none
+		sourceColumn: RegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommodityName
+		dataType: string
+		lineageTag: 240bd627-04c7-4302-b9bc-bde7e2e87555
+		summarizeBy: none
+		sourceColumn: CommodityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommodityGroupSource
+		dataType: string
+		lineageTag: 0b6a6e3a-c4e5-419e-838e-746ea0befb41
+		summarizeBy: none
+		sourceColumn: CommodityGroupSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 86b357f4-53dd-4442-854a-42150a2272c4
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: a777adb3-0c0d-4c2c-b305-3b3d950fc39c
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Status
+		dataType: string
+		lineageTag: 2fde1b91-aba4-43cb-a099-a4b19ec501c6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: c903e213-cf6e-46ee-abc5-3083f640dc8a
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactMine = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("\\psf\Home\Desktop\Australian Resources and Energy Explorer\data\clean\operating_mines.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"MineKey", Int64.Type}, {"MineName", type text}, {"StateCode", type text}, {"RegionName", type text}, {"CommodityName", type text}, {"CommodityGroupSource", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Status", type text}, {"Source", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

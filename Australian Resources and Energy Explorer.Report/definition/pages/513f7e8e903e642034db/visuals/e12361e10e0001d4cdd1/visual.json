@@ -1,0 +1,118 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "e12361e10e0001d4cdd1",
+  "position": {
+    "x": 1016.0424564063684,
+    "y": 147.02047005307051,
+    "z": 5000,
+    "height": 112.08491281273692,
+    "width": 370,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Commodities Selected"
+                }
+              },
+              "queryRef": "FactMine.Commodities Selected",
+              "nativeQueryRef": "Commodities Selected"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FactMine"
+                  }
+                },
+                "Property": "Commodities Selected"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DED8CE'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b79b51ebd349ec932773",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactMine"
+              }
+            },
+            "Property": "Commodities Selected"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

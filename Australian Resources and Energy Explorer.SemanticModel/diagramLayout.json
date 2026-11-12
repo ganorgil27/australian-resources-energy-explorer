@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 618.38305001469359,
+            "y": 3.1553020401532308
+          },
+          "nodeIndex": "DimCommodity",
+          "nodeLineageTag": "cb1fbc01-ecaa-4e25-bd3b-aac1afab3807",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 53.140412819754275
+          },
+          "nodeIndex": "DimRegion",
+          "nodeLineageTag": "ac7af68b-5e90-459a-80cb-ae42f8d38863",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20156119318517,
+            "y": -50
+          },
+          "nodeIndex": "FactMine",
+          "nodeLineageTag": "17a36ff4-4d95-45f0-acb5-ee16dca9ad58",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

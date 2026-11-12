@@ -1,0 +1,194 @@
+{
+  "name": "Australian Resources Explorer",
+  "dataColors": [
+    "#B56A1A",
+    "#176B6B",
+    "#D9A441",
+    "#284B63",
+    "#728C69",
+    "#8A5A44",
+    "#5F6B6D",
+    "#C98B5B",
+    "#3F7C85",
+    "#9B7E46",
+    "#7A5C8E",
+    "#49796B",
+    "#C0A36E"
+  ],
+  "foreground": "#202A2C",
+  "foregroundNeutralSecondary": "#5F6B6D",
+  "foregroundNeutralTertiary": "#9AA4A5",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F3F0E9",
+  "backgroundNeutral": "#E8E2D7",
+  "backgroundDark": "#D8D1C5",
+  "tableAccent": "#B56A1A",
+  "maximum": "#176B6B",
+  "center": "#F7F4ED",
+  "minimum": "#E4B875",
+  "good": "#728C69",
+  "neutral": "#D9A441",
+  "bad": "#A94A45",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 24,
+      "color": "#202A2C"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#202A2C"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#202A2C"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#5F6B6D"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#DED8CE"
+              }
+            },
+            "radius": 8,
+            "width": 1
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontSize": 14,
+            "fontFamily": "Segoe UI Semibold",
+            "fontColor": {
+              "solid": {
+                "color": "#202A2C"
+              }
+            }
+          }
+        ],
+        "categoryAxis": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "#E8E2D7"
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": "#5F6B6D"
+              }
+            }
+          }
+        ],
+        "valueAxis": [
+          {
+            "gridlineColor": {
+              "solid": {
+                "color": "#E8E2D7"
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": "#5F6B6D"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F3F0E9"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#D8D1C5"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cardVisual": {
+      "*": {
+        "title": [
+          {
+            "show": false
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#DED8CE"
+              }
+            },
+            "radius": 8
+          }
+        ]
+      }
+    },
+    "barChart": {
+      "*": {
+        "dataPoint": [
+          {
+            "defaultColor": {
+              "solid": {
+                "color": "#B56A1A"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "grid": [
+          {
+            "rowPadding": 5,
+            "gridHorizontal": true,
+            "gridHorizontalColor": {
+              "solid": {
+                "color": "#E8E2D7"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

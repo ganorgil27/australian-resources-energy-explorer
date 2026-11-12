@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Australian Resources and Energy Explorer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a80a2d0a-1143-4edd-b7d1-8fdf358127b1"
+  }
+}

@@ -1,0 +1,72 @@
+table DimRegion
+	lineageTag: ac7af68b-5e90-459a-80cb-ae42f8d38863
+
+	measure 'Selected Region Label' =
+			
+			VAR VisibleRegions =
+			    COUNTROWS(
+			        VALUES(DimRegion[RegionName])
+			    )
+			
+			VAR AllRegions =
+			    CALCULATE(
+			        COUNTROWS(
+			            VALUES(DimRegion[RegionName])
+			        ),
+			        REMOVEFILTERS(DimRegion)
+			    )
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        VisibleRegions = AllRegions, "Australia",
+			        VisibleRegions = 1, SELECTEDVALUE(DimRegion[RegionName]),
+			        "Multiple regions"
+			    )
+		lineageTag: d5e96d16-f6b3-4af8-8123-37103559fae5
+
+	column RegionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ad0bb68b-708b-4b67-8a6c-f3e85a98486b
+		summarizeBy: none
+		sourceColumn: RegionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateCode
+		dataType: string
+		lineageTag: 5b9597ca-9be0-4486-9ad6-ff5ac5776f95
+		summarizeBy: none
+		sourceColumn: StateCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionName
+		dataType: string
+		lineageTag: 036c1237-4ae5-47c3-91b6-3fb19d63b48a
+		summarizeBy: none
+		sourceColumn: RegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimRegion = m
+		mode: import
+		source =
+				let
+				    Source = FactMine,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"StateCode", "RegionName"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Sorted Rows" = Table.Sort(#"Removed Duplicates",{{"RegionName", Order.Ascending}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Sorted Rows", "Index", 0, 1, Int64.Type),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Index",{"Index"}),
+				    #"Added Index1" = Table.AddIndexColumn(#"Removed Columns", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Index1",{{"Index", "RegionKey"}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"RegionKey", "StateCode", "RegionName"})
+				in
+				    #"Reordered Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

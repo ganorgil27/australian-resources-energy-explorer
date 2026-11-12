@@ -1,0 +1,18 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local Power BI/editor state
+**/.pbi/editorSettings.json
+*.pbix
+* - backup.pbip
+
+# Source files not used by the delivered MVP
+data/raw/*.xlsx
+
+# Working design/map experiments superseded by the native Shape Map
+assets/
+scripts/svg_to_geojson.py
+

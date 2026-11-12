@@ -1,0 +1,344 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "f23c51b4029e1692a3a5",
+  "position": {
+    "x": 39.302501895375279,
+    "y": 289.6739954510993,
+    "z": 11000,
+    "height": 422.13798332069746,
+    "width": 717.6345716451857,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "shapeMap",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimRegion"
+                    }
+                  },
+                  "Property": "RegionName"
+                }
+              },
+              "queryRef": "DimRegion.RegionName",
+              "nativeQueryRef": "RegionName"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Operating Mines"
+                }
+              },
+              "queryRef": "FactMine.Operating Mines",
+              "nativeQueryRef": "Operating Mines"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Top Commodity"
+                }
+              },
+              "queryRef": "FactMine.Top Commodity",
+              "nativeQueryRef": "Top Commodity"
+            }
+          ]
+        },
+        "Value": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactMine"
+                    }
+                  },
+                  "Property": "Map Mine Count"
+                }
+              },
+              "queryRef": "FactMine.Map Mine Count",
+              "nativeQueryRef": "Map Mine Count"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "shape": [
+        {
+          "properties": {
+            "datasourceType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'file_upload'"
+                }
+              }
+            },
+            "map": {
+              "geoJson": {
+                "type": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'shared'"
+                    }
+                  }
+                },
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'australia.states.topo'"
+                    }
+                  }
+                },
+                "content": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "ShapeMap",
+                      "PackageType": 2,
+                      "ItemName": "australia.states.topo"
+                    }
+                  }
+                }
+              }
+            },
+            "projectionEnum": {
+              "expr": {
+                "Literal": {
+                  "Value": "'albersUsa'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fillRule": {
+              "linearGradient2": {
+                "min": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#E4B875'"
+                      }
+                    }
+                  }
+                },
+                "max": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#B56A1A'"
+                      }
+                    }
+                  }
+                },
+                "nullColoringStrategy": {
+                  "strategy": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'asZero'"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "defaultColors": [
+        {
+          "properties": {
+            "defaultColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E1E1E1'"
+                    }
+                  }
+                }
+              }
+            },
+            "borderColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DED8CE'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Operating mines by state'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6e3a39e0cd040ee0e949",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimRegion"
+              }
+            },
+            "Property": "RegionName"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "019618528aaab2ecb090",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactMine"
+              }
+            },
+            "Property": "Map Mine Count"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e1688b665e675bd1c341",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactMine"
+              }
+            },
+            "Property": "Operating Mines"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c40d2e6e0cc211799614",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "FactMine"
+              }
+            },
+            "Property": "Top Commodity"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

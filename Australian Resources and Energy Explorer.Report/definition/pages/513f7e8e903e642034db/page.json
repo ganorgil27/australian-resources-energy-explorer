@@ -1,0 +1,145 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "513f7e8e903e642034db",
+  "displayName": "Resources Explorer",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4a8744305e6b928d425c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimRegion"
+              }
+            },
+            "Property": "RegionName"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "197L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F3F0E9'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D8D1C5'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "e2c09337902746b38ace",
+      "target": "f23c51b4029e1692a3a5",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e2c09337902746b38ace",
+      "target": "05c07ccbd7499c600b0d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e2c09337902746b38ace",
+      "target": "e12361e10e0001d4cdd1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f23c51b4029e1692a3a5",
+      "target": "e2c09337902746b38ace",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f23c51b4029e1692a3a5",
+      "target": "1279b8fbacde55086779",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f23c51b4029e1692a3a5",
+      "target": "05c07ccbd7499c600b0d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f23c51b4029e1692a3a5",
+      "target": "769f24bb29910c03dd9c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f23c51b4029e1692a3a5",
+      "target": "e12361e10e0001d4cdd1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e12361e10e0001d4cdd1",
+      "target": "f23c51b4029e1692a3a5",
+      "type": "DataFilter"
+    }
+  ]
+}

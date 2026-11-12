@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "62c8137305470b726d73",
+  "position": {
+    "x": 526.94465504169818,
+    "y": 147.02047005307051,
+    "z": 11001,
+    "height": 112.08491281273692,
+    "width": 370,
+    "tabOrder": 11001
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimRegion"
+                    }
+                  },
+                  "Property": "Selected Region Label"
+                }
+              },
+              "queryRef": "DimRegion.Selected Region Label",
+              "nativeQueryRef": "Selected Region",
+              "displayName": "Selected Region"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#202A2C'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#5F6B6D'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DED8CE'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b8d2e62f00e89dbed3c1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimRegion"
+              }
+            },
+            "Property": "Selected Region Label"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

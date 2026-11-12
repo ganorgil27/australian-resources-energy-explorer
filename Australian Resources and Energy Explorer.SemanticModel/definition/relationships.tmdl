@@ -1,0 +1,8 @@
+relationship AutoDetected_c8ae9e99-2f93-4986-b5b0-a3af75b82d26
+	fromColumn: FactMine.StateCode
+	toColumn: DimRegion.StateCode
+
+relationship AutoDetected_f13afb38-643a-43b6-8ca9-d910bcbc20ab
+	fromColumn: FactMine.CommodityName
+	toColumn: DimCommodity.CommodityName
+
